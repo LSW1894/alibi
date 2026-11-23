@@ -1,0 +1,29 @@
+ALIBI - VERSIONE WEB
+====================
+
+Questa cartella contiene solo file statici: si carica cosi' com'e', tutta.
+Il gioco gira su Supabase (database e funzioni): non serve nessun PC acceso.
+
+DOVE CARICARLA
+- Sul tuo hosting: copia tutto il contenuto della cartella nella radice di un sottodominio
+  (es. alibi.tuodominio.it), con HTTPS attivo (quasi tutti gli hosting lo danno gratis).
+  Il file .htaccess incluso serve agli hosting Apache (Aruba, Register, ...).
+- Su GitHub Pages: crea un repository, carica il contenuto della cartella, poi
+  Settings > Pages > "Deploy from a branch" (main, cartella / ).
+  Con un tuo dominio: Settings > Pages > Custom domain, e presso il registrar un record CNAME
+  alibi -> <tuo-utente>.github.io
+  Senza dominio il sito sta in https://<tuo-utente>.github.io/<repository>/ : in quel caso
+  la versione web va creata con WEB_BASE_URL=/<repository> (chiedi a Claude o vedi LEGGIMI.md).
+
+PAGINE INCLUSE
+  index.html     il gioco
+  admin.html     canale delle storie: carica, aggiorna, togli (serve il token di amministrazione)
+  privacy.html, termini.html, supporto.html   pagine richieste dagli store
+
+COLLEGAMENTO A SUPABASE
+E' gia' dentro la versione web. config.example.json serve solo per puntare a un altro progetto:
+rinominalo config.json e cambia indirizzo e chiave pubblica (la chiave "publishable" non e' un segreto).
+
+IN CASA, SENZA INTERNET
+avvia-server.bat offre la stessa versione web: dal telefono apri http://<ip-del-pc>:8787
+e la pagina usa il server del PC invece di Supabase.

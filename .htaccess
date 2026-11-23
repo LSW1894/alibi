@@ -1,0 +1,5 @@
+# Apache (hosting classici): gli indirizzi come /partita o /entra restano validi anche ricaricando la pagina.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
